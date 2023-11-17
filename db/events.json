@@ -5,5 +5,19 @@
     "description": "pippo",
     "date": "17-11-1994",
     "maxSeats": 50
+  },
+  {
+    "id": 2,
+    "title": "Titolo dell'evento",
+    "description": "Descrizione dell'evento",
+    "date": "2023-11-17",
+    "maxSeats": 100
+  },
+  {
+    "id": 3,
+    "title": "Titolo dell'evento",
+    "description": "Descrizione dell'evento",
+    "date": "2023-11-17",
+    "maxSeats": 100
   }
 ]

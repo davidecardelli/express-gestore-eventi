@@ -21,6 +21,16 @@ class Event {
         }
     }
 
+    static filterEvents(query) {
+        const events = Event.getAllEvents();
+        // ! URL ESEMPIO PER FILTRARE: http://localhost:3000/events?id=1
+        if (query.id) {
+            const eventId = parseInt(query.id, 10);
+            return events.filter(event => event.id === eventId);
+        }
+        return events;
+    }
+
     static saveEvent(event) {
         const eventsFilePath = path.join(__dirname, '../db/events.json');
         const events = Event.getAllEvents();

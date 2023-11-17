@@ -2,9 +2,9 @@ const Event = require('../models/event');
 
 // ! INDEX
 const index = (req, res) => {
-    // Implementazione della logica per ottenere tutti gli eventi
-    const events = Event.getAllEvents();
-    res.json(events);
+    // Implementazione della logica per ottenere tutti gli eventi e/o filtrarli per id se presente id nella query
+    const filteredEvents = Event.filterEvents(req.query);
+    res.json(filteredEvents);
 };
 
 // ! STORE
