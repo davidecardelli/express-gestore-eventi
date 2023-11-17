@@ -1,13 +1,19 @@
+const Event = require('../models/event');
+
 // ! INDEX
 const index = (req, res) => {
     // Implementazione della logica per ottenere tutti gli eventi
-    res.send('Rotta:GET /events');
+    const events = Event.getAllEvents();
+    res.json(events);
 };
 
 // ! STORE
 const store = (req, res) => {
     // Implementazione della logica per salvare un nuovo evento
-    res.send('Rotta:POST /events');
+    const eventData = req.body;
+    const newEvent = new Event(eventData);
+    const savedEvent = Event.saveEvent(newEvent);
+    res.json(savedEvent);
 };
 
 // ! UPDATE
